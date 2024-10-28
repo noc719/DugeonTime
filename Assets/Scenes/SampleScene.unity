@@ -209,7 +209,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551741185}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 40
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -247,8 +247,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6434507, y: 1.5861083, z: 3.1095796}
-  m_Center: {x: -0.075128555, y: 0.6069458, z: 0.38069504}
+  m_Size: {x: 1.6, y: 1.7, z: 2.8}
+  m_Center: {x: 0, y: 0.86, z: 0.25}
 --- !u!4 &551741188
 Transform:
   m_ObjectHideFlags: 0
@@ -308,7 +308,19 @@ MonoBehaviour:
     m_ActionId: 1ebf7c46-291b-439f-bdf5-59aff1edb57c
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 551741191}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 59935735-eed6-4c75-b09b-58dc886c7b55
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -353,6 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  power: 200
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
