@@ -8,10 +8,14 @@ public class PlayerController : MonoBehaviour
     //구현 해야할 것 우선사항
     //화면 시점
     [Header("Move")]
+
     [SerializeField] private float speed;
     Vector3 dir = Vector3.zero;
+
     [Header("Jump")]
+
     [SerializeField] private float power;
+    [SerializeField] private LayerMask groundLayer;
 
     private void Awake()
     {
@@ -21,6 +25,10 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
+        Debug.DrawRay(transform.position + (transform.forward * 0.5f)+(transform.right*0.6f) + (transform.up * 0.1f), Vector3.down);
+        Debug.DrawRay(transform.position + (transform.forward * 0.5f) -(transform.right * 0.6f) + (transform.up * 0.1f), Vector3.down);
+        Debug.DrawRay(transform.position - (transform.forward *0.5f ) + (transform.right * 0.6f) + (transform.up * 0.1f), Vector3.down);
+        Debug.DrawRay(transform.position - (transform.forward * 0.5f ) - (transform.right * 0.6f) + (transform.up * 0.1f), Vector3.down);
     }
 
     private void Move()
@@ -31,8 +39,8 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        if (!isGrounded()) return;
         _rigidbody.AddForce(Vector3.up * power, ForceMode.Impulse);
-        //Ray를 쏴서 지면과 일정이상 멀어지면 점프가 안되도록
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -54,5 +62,17 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+    }
+
+    private bool isGrounded()
+    {
+        if(Physics.Raycast(new Ray(transform.position + (transform.forward * 0.5f) + (transform.right * 0.6f) + (transform.up * 0.1f), Vector3.down), 0.3f, groundLayer)&&
+           Physics.Raycast(new Ray(transform.position + (transform.forward * 0.5f) - (transform.right * 0.6f) + (transform.up * 0.1f), Vector3.down), 0.3f, groundLayer)&&
+           Physics.Raycast(new Ray(transform.position - (transform.forward * 0.5f) + (transform.right * 0.6f) + (transform.up * 0.1f), Vector3.down), 0.3f, groundLayer)&&
+           Physics.Raycast(new Ray(transform.position - (transform.forward * 0.5f) - (transform.right * 0.6f) + (transform.up * 0.1f), Vector3.down), 0.3f, groundLayer))
+        {
+            return true;
+        }
+        return false;
     }
 }
