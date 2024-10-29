@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Hunger : ConditionUI
+public class Hunger : Condition
 {
     protected override void Start()
     {
@@ -10,16 +10,20 @@ public class Hunger : ConditionUI
     protected override void Update()
     {
         base.Update();
-        Hungry();
+
+        if (curValue > 0)
+        {
+            Substract(passiveValue*Time.deltaTime);
+        }
     }
 
-    private void Hungry()
+    public bool Hungry()
     {
-        curValue -= passiveValue*Time.deltaTime;
+        return (curValue == 0);
     }
 
     public void Eat(float value)
     {
-        curValue += value;
+        Add(value);
     }
 }

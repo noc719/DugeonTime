@@ -1,4 +1,4 @@
-﻿public class Exp : ConditionUI
+﻿public class Exp : Condition
 {
     protected override void Start()
     {
