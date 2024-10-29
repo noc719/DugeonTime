@@ -2,8 +2,12 @@
 
 public class Player: MonoBehaviour
 {
-    private void Start()
+    public PlayerController controller;
+    public ConditionUI ConditionUI;
+    private void Awake()
     {
         CharacterManager.Instance.Player = this;
+        controller = GetComponent<PlayerController>();
+        ConditionUI = GetComponent<ConditionUI>();
     }
 }
