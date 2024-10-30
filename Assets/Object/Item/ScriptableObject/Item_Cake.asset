@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b83fb9a80c1b08d4a8c39882b14d970b, type: 3}
-  m_Name: Item_Cupcake
+  m_Name: Item_Cake
   m_EditorClassIdentifier: 
-  itemName: "\uCEF5\uCF00\uC774\uD06C"
-  discription: "\uAC70\uB300\uD55C \uCEF5\uCF00\uC78C"
+  itemName: "\uCF00\uC774\uD06C"
+  discription: "\uCEE4\uB2E4\uB780 \uC870\uAC01 \uCF00\uC774\uD06C"
   type: 0
   icon: {fileID: 21300000, guid: b53822ec75d701e49b9947d1d09fd81e, type: 3}
-  dropPrefab: {fileID: 5337696419777479523, guid: f0e6819db2b79a24387b898225f577b7, type: 3}
+  dropPrefab: {fileID: 2768217691594135774, guid: dc3277994b941424c8021dc1607112f7, type: 3}
   canStack: 1
   maxStackAmount: 5
-  value: 5
+  value: 10
