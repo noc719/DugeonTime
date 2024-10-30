@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4150407748009404397}
   - component: {fileID: 8214730118835175729}
   - component: {fileID: 8221421573117711549}
-  m_Layer: 0
+  - component: {fileID: 7258677996064042940}
+  m_Layer: 9
   m_Name: FishDagger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.44548523, y: 0.18781027, z: 0.078036}
   m_Center: {x: -0.051573925, y: -0.0019280389, z: 0}
+--- !u!114 &7258677996064042940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7431065867760914932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f0d56ee3c99e24fa4d6687f565ad64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: f38ad1f1da5d5e540b5876f287bc6601, type: 2}

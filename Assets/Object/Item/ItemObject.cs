@@ -14,13 +14,13 @@ public class ItemObject : MonoBehaviour,IInteractable
 {
     public ItemData data;
 
-    public string GetPromptDescriptionText()
+    public string GetPromptNameText()
     {
         string text = $"{data.itemName}";
         return text;
     }
 
-    public string GetPromptNameText()
+    public string GetPromptDescriptionText()
     {
         string text = $"{data.discription}";
         return text;
